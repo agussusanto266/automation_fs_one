@@ -1,6 +1,6 @@
 import { test as base, createBdd } from 'playwright-bdd';
-import { LoginPage } from '../../pages/LoginPage';
-import { LogoutPage } from '../../pages/LogoutPage';
+import { LoginPage } from '../../../pages/LoginPage';
+import { LogoutPage } from '../../../pages/LogoutPage';
 
 type Fixtures = { loginPage: LoginPage; logoutPage: LogoutPage };
 

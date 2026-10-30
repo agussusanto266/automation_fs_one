@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import { Given, When, Then } from './fixtures';
+import { Given, When, Then } from '../../ui/steps/fixtures';
 
 When('user logout', async ({ logoutPage }) => {
   await logoutPage.logout();

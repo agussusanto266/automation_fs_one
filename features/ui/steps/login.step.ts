@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import { Given, When, Then } from '../../features/steps/fixtures';
+import { Given, When, Then } from '../../ui/steps/fixtures';
 
 Given('user open the login page', async ({ loginPage }) => {
   await loginPage.open();
