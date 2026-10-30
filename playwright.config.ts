@@ -9,7 +9,7 @@ const uiTestDir = defineBddConfig({
 
 const apiTestDir = defineBddConfig({
   features: 'features/api/**/*.feature',
-  steps: ['features/api/steps/**/*.ts', 'apiClient/**/*.ts'],
+  steps: ['features/api/steps/**/*.ts', 'api/**/*.ts'],
   outputDir: '.features-gen/api',
 });
 

@@ -1,5 +1,6 @@
 import { expect } from '@playwright/test';
-import { Given, When, Then } from '../../ui/steps/fixtures';
+import { Given, When, Then } from './fixtures';
+import { users } from '../../../test-data/users';
 
 Given('user open the login page', async ({ loginPage }) => {
   await loginPage.open();
@@ -8,7 +9,7 @@ Given('user open the login page', async ({ loginPage }) => {
 When(
   'user login with valid username and valid password',
   async ({ loginPage }) => {
-    await loginPage.login('standard_user', 'secret_sauce');
+    await loginPage.loginAs(users.validUser);
   },
 );
 
@@ -17,7 +18,7 @@ Then('user redirect to dashboard page', async ({ page }) => {
 });
 
 When('user login with locked user', async ({ loginPage }) => {
-  await loginPage.login('locked_out_user', 'secret_sauce');
+  await loginPage.loginAs(users.lockedOutUser);
 });
 
 Then('show failed login error message', async ({ loginPage }) => {

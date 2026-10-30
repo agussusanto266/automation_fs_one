@@ -1,6 +1,6 @@
 import { Page, Locator } from '@playwright/test';
 
-export class LogoutPage {
+export class InventoryPage {
   readonly logoutBtn: Locator;
   readonly burgetBtn: Locator;
 
