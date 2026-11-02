@@ -155,7 +155,7 @@ Akun login (`test-data/users.ts`) berasal dari halaman login saucedemo dan meman
 | Nama di kode | Username | Keterangan |
 |---|---|---|
 | `users.validUser` | `standard_user` | Akun normal, bisa login |
-| `users.lockedUser` | `locked_out_user` | Akun yang diblokir, login selalu ditolak |
+| `users.lockedOutUser` | `locked_out_user` | Akun yang diblokir, login selalu ditolak |
 
 > Di project sungguhan, password asli **tidak boleh** disimpan di repository. Gunakan file `.env` yang tidak ikut di-upload ke GitHub.
 
