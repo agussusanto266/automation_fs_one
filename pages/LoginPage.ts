@@ -1,5 +1,5 @@
 import { Page, Locator } from '@playwright/test';
-
+import { User } from '../test-data/users';
 export class LoginPage {
   readonly username: Locator;
   readonly password: Locator;
@@ -16,10 +16,13 @@ export class LoginPage {
   async open() {
     await this.page.goto('/');
   }
-
   async login(username: string, password: string) {
     await this.username.fill(username);
     await this.password.fill(password);
     await this.loginBtn.click();
+  }
+
+  async loginAs(user: User) {
+    await this.login(user.username, user.password);
   }
 }

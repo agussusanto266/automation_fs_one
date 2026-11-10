@@ -1,6 +1,6 @@
 import { createBdd } from 'playwright-bdd';
 import { expect } from '@playwright/test';
-import { PimPage } from '../../pages/PimPage';
+import { PimPage } from '../../../pages/PimPage';
 
 const { Given, When, Then } = createBdd();
 
