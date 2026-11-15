@@ -1,12 +1,13 @@
 import { createBdd } from 'playwright-bdd';
-import { expect } from '@playwright/test';
-import { PimPage } from '../../pages/PimPage';
+import { test, expect } from '@playwright/test';
+import { PimPage } from '../../../pages/PimPage';
 
 const { Given, When, Then } = createBdd();
 
 let pimPage: PimPage;
 
 Given('user navigates to OrangeHRM login page', async ({ page }) => {
+  test.setTimeout(60000);
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
   pimPage = new PimPage(page);
 });
@@ -71,5 +72,5 @@ When('user deletes the first record', async () => {
 });
 
 Then('success toast notification should appear', async () => {
-  await expect(pimPage.toastSuccess).toBeVisible({ timeout: 10000 });
+  await expect(pimPage.toastSuccess).toBeVisible({ timeout: 15000 });
 });

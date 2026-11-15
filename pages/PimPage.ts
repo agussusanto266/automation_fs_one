@@ -35,7 +35,8 @@ export class PimPage {
     this.searchButton = page.locator('button[type="submit"]');
     this.tableRows = page.locator('.oxd-table-body .oxd-table-card');
     this.noRecordsLabel = page.locator('//span[text()="No Records Found"]');
-    this.editIcon = page.locator('.oxd-table-cell-actions button i.bi-pencil-fill').first();
+    // Mengambil tombol aksi di baris pertama yang bukan tombol hapus (trash)
+    this.editIcon = page.locator('.oxd-table-body .oxd-table-card').first().locator('.oxd-table-cell-actions button:not(:has(i.bi-trash))');
     this.deleteIcon = page.locator('.oxd-table-cell-actions button i.bi-trash').first();
     this.confirmDeleteBtn = page.locator('.oxd-button--label-danger');
     this.toastSuccess = page.locator('.oxd-toast-content--success');
@@ -58,7 +59,6 @@ export class PimPage {
     await this.firstNameInput.fill(first);
     await this.lastNameInput.fill(last);
     await this.saveButton.first().click();
-    // Tunggu redirect halaman detail agar tidak timeout 30s
     await this.page.waitForURL(/.*viewPersonalDetails.*/, { timeout: 15000 });
   }
 
@@ -74,12 +74,16 @@ export class PimPage {
 
   async clickEditFirstRecord() {
     await this.editIcon.click();
-    await this.page.waitForURL(/.*viewPersonalDetails.*/, { timeout: 15000 });
+    await this.page.waitForURL(/.*viewPersonalDetails.*/, { timeout: 20000 });
+    // Tunggu spinner loading form selesai agar input tidak tertimpa data lama
+    await this.page.locator('.oxd-form-loader').waitFor({ state: 'detached', timeout: 15000 }).catch(() => {});
   }
 
   async updateMiddleName(middle: string) {
+    await this.middleNameInput.waitFor({ state: 'visible', timeout: 15000 });
     await this.middleNameInput.fill(middle);
-    await this.saveButton.first().click();
+    // Klik tombol Save khusus pada form pertama (Personal Details)
+    await this.page.locator('form.oxd-form').first().locator('button[type="submit"]').click();
   }
 
   async deleteFirstRecord() {
