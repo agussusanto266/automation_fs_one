@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "bddgen && playwright test",
-    "test:headed": "bddgen && playwright test --headed",
-    "test:smoke": "bddgen --tags @smoke && playwright test --headed",
-    "report": "playwright show-report"
+    "test:saucedemo": "npx bddgen && npx playwright test --headed --project=saucedemo",
+    "test:orangehrm": "npx bddgen && npx playwright test --headed --project=orangehrm",
+    "test:dummyjson": "npx bddgen && npx playwright test --project=dummyjson"
   },
   "keywords": [],
   "author": "",

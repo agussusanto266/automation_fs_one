@@ -1,5 +1,5 @@
 import { APIRequestContext } from '@playwright/test';
-import { User } from '../test-data/users';
+import { User } from '../../test-data/saucedemo/users';
 
 // Endpoin login
 export class AuthApi {

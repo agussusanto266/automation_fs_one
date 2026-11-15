@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import { When, Then } from './fixtures';
+import { When, Then } from '../../../../fixtures/saucedemo.fixtures';
 
 When('user logout', async ({ inventoryPage }) => {
   await inventoryPage.logout();

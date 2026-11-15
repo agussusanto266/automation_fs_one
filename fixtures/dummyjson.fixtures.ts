@@ -1,7 +1,7 @@
 import { APIResponse } from '@playwright/test';
 import { test as base, createBdd } from 'playwright-bdd';
-import { AuthApi } from '../../../api/AuthApi';
-import { User } from '../../../test-data/users';
+import { AuthApi } from '../api/dummyjson/AuthApi';
+import { User } from '../test-data/dummyjson/apiUsers';
 
 // Tempat menyimpan data yang dibagikan antar step dalam satu skenario
 type TestContext = {
