@@ -1,7 +1,11 @@
 import { expect } from '@playwright/test';
-import { Given, When, Then, getResponse } from '../steps/fixtures';
-import { apiUsers } from '../../../test-data/apiUsers';
-import { test } from 'playwright-bdd';
+import {
+  Given,
+  When,
+  Then,
+  getResponse,
+} from '../../../../fixtures/dummyjson.fixtures';
+import { apiUsers } from '../../../../test-data/dummyjson/apiUsers';
 
 When(
   'login in to the API as a valid user',

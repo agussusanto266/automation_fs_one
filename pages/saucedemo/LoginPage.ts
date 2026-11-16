@@ -1,5 +1,5 @@
 import { Page, Locator } from '@playwright/test';
-import { User } from '../test-data/users';
+import { User } from '../../test-data/saucedemo/users';
 export class LoginPage {
   readonly username: Locator;
   readonly password: Locator;

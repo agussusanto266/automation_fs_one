@@ -1,4 +1,4 @@
-import { User } from './users';
+import { User } from '../saucedemo/users';
 
 export const apiUsers = {
   validUser: {
@@ -11,3 +11,5 @@ export const apiUsers = {
     password: 'wrong-password',
   },
 } satisfies Record<string, User>;
+export { User };
+

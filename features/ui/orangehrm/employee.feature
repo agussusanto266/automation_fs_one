@@ -1,8 +1,8 @@
 Feature: Employee Management (PIM)
 
   Background:
-    Given user navigates to OrangeHRM login page
-    And user logs in with username "Admin" and password "admin123"
+    Given user open the login orangeHRM page
+    And user login with valid username and valid password in orangeHRM
     And user navigates to "PIM" module
 
     # Positif - Employee List (Tampilan Awal)
