@@ -12,8 +12,9 @@ export default defineConfig({
   retries: 0,
   reporter: [['html', { open: 'never' }], ['list']],
   use: {
-    baseURL: 'https://www.saucedemo.com',
-    headless: true,
+    // baseURL: 'https://www.saucedemo.com',
+    baseURL: 'https://demoqa.com',
+    headless: false,
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
   },
